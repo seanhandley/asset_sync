@@ -12,7 +12,7 @@ module AssetSync
     end
 
     def connection
-      @connection ||= Fog::Storage.new(self.config.fog_options)
+      @connection ||= Fog::Storage.new(self.config.fog_options.merge(host: 'storage.datacentred.io'))
     end
 
     def bucket
